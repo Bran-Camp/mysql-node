@@ -28,5 +28,17 @@ function customerPrompt(res) {
 		type: "input",
 		name: "selection",
 		message: "What is the id of the product you wnat to buy?"
-	}])
+	},
+	{
+		type: "input",
+		name: "quantity",
+		message: "How many do you want to buy?"
+	}]).then(function order) {
+		var quantity = order.quantity;
+		var itemId = order.id;
+		dbConnection.query("SELECT * FROM products where id=" itemID, function(err, selectedItem) {
+			if (err) throw err;
+			 if (selectedItem[0])
+		};
+	}
 }
